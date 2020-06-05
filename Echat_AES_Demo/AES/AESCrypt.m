@@ -37,10 +37,10 @@
 + (NSString *)encrypt:(NSData *)message password:(NSData *)password {
   NSData *encryptedData = [message AES256EncryptedDataUsingKey:password error:nil];
 ////打印字节与安卓对应
-    char *  byte = (char *)[encryptedData bytes];
-    for (int i = 0;i < encryptedData.length; i++) {
-        NSLog(@"AES 256 -- %d ---%d",i,byte[i]);
-    }
+//    char *  byte = (char *)[encryptedData bytes];
+//    for (int i = 0;i < encryptedData.length; i++) {
+//        NSLog(@"AES 256 -- %d ---%d",i,byte[i]);
+//    }
   NSString *base64EncodedString = [NSString base64StringFromData:encryptedData length:[encryptedData length]];
   return base64EncodedString;
 }
